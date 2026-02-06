@@ -1,28 +1,32 @@
 body {
-    display: flex;               
-    flex-direction: column;       
-    justify-content: center;      
-    align-items: center;          
-    min-height: 100vh;            
-    margin: 0;                    
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    overflow: hidden;             
+    background: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 0;                   /* убираем старый margin-top */
+    height: 100vh;               /* занимать весь экран */
+    display: flex;               /* Flexbox */
+    flex-direction: column;      /* элементы сверху вниз */
+    justify-content: center;     /* центрируем по вертикали */
+    align-items: center;         /* центрируем по горизонтали */
+    overflow: hidden;
 }
+
 h1 {
     font-size: 40px;
     color: #000000;
+    margin: 0;
 }
 
 .buttons {
     margin-top: 40px;
+    display: flex;
+    gap: 20px; /* расстояние между кнопками */
 }
 
 button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     padding: 15px 40px;
-    margin: 10px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
@@ -39,9 +43,8 @@ button {
     background-color: #555;
     color: white;
 }
+
 #top-image {
-    display: block;           /* чтобы центрировать */
-    margin: 50px auto 30px;   /* 50px сверху, auto слева и справа, 30px снизу */
-
+    display: block;
+    margin-bottom: 30px;   /* немного отступа под картинкой */
 }
-
