@@ -1,12 +1,14 @@
 body {
-    background: white;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    margin-top: 100px;
-    overflow: hidden;
-    height: 100vh;
+    display: flex;               
+    flex-direction: column;       
+    justify-content: center;      
+    align-items: center;          
+    min-height: 100vh;            
+    margin: 0;                    
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    overflow: hidden;             
 }
-
 h1 {
     font-size: 40px;
     color: #000000;
@@ -42,3 +44,4 @@ button {
     margin: 50px auto 30px;   /* 50px сверху, auto слева и справа, 30px снизу */
 
 }
+
