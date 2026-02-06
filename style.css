@@ -23,6 +23,14 @@ h1 {
     gap: 20px; /* расстояние между кнопками */
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* по вертикали */
+    align-items: center;     /* по горизонтали */
+    min-height: 100%;
+}
+
 button {
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
