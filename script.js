@@ -1,55 +1,54 @@
 let yesBtn = document.getElementById("yes");
 let noBtn = document.getElementById("no");
-let message = document.querySelector("h1");
+let mainText = document.getElementById("main-text");
 let topImage = document.getElementById("top-image");
 let finalScreen = document.getElementById("final-screen");
+let giftScreen = document.getElementById("gift-screen");
+let podarokBtn = document.getElementById("podarok");
 
 let yesScale = 1;
 let noScale = 1;
-let noX = 0;
-let noY = 0;
 const NO_MIN_SIZE = 0.3;
 
-// «НЕТ» убегает при наведении
+// НЕТ убегает
 noBtn.addEventListener("mouseenter", () => {
-    noX = Math.random() * 300 - 150;
-    noY = Math.random() * 100 - 50;
-    noBtn.style.transform = `translate(${noX}px, ${noY}px) scale(${noScale})`;
+    let x = Math.random() * 300 - 150;
+    let y = Math.random() * 100 - 50;
+    noBtn.style.transform = `translate(${x}px, ${y}px) scale(${noScale})`;
 });
 
-// Клик по «НЕТ»
+// НЕТ уменьшается, ДА растёт
 noBtn.addEventListener("click", () => {
     noScale -= 0.2;
     if (noScale <= NO_MIN_SIZE) {
         noBtn.style.display = "none";
-        message.textContent = "А теперь? :)"; 
+        mainText.textContent = "А теперь? :)";
         return;
     }
-
-    noBtn.style.transform = `translate(${noX}px, ${noY}px) scale(${noScale})`;
 
     yesScale += 0.3;
     yesBtn.style.transform = `scale(${yesScale})`;
 
-    let messages = [
-        "Ты уверена?..",
-        "Последний шанс...",
-        "Давай, подумай ещё!",
-    ];
-    message.textContent = messages[Math.floor(Math.random() * messages.length)];
+    mainText.textContent = "Последний шанс…";
 });
 
-// Клик по «ДА» — финальный экран + падающие сердечки
+// ДА — финал
 yesBtn.addEventListener("click", () => {
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
-    message.style.display = "none";
-    topImage.style.display = "none";     // прячем первую картинку
-    finalScreen.style.display = "block"; // показываем гифку с котиком
+    mainText.style.display = "none";
+    topImage.style.display = "none";
 
-    // запускаем падающие сердечки
-    setInterval(createHeart, 300); // каждые 300мс создаётся новое сердечко
+    finalScreen.style.display = "block";
+    setInterval(createHeart, 300);
 });
+
+// ПОДАРОЧЕК
+podarokBtn.addEventListener("click", () => {
+    finalScreen.style.display = "none";
+    giftScreen.style.display = "block";
+});
+
 function createHeart() {
     let heart = document.createElement("i");
     heart.className = "bi bi-heart-fill text-danger"; // красные сердечки
