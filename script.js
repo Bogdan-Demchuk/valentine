@@ -29,7 +29,7 @@ noBtn.addEventListener("click", () => {
     yesScale += 0.3;
     yesBtn.style.transform = `scale(${yesScale})`;
 
-    mainText.textContent = "Последний шанс…";
+    mainText.textContent = "Точно?:( подумай еще пж";
 });
 
 // ДА — финал
@@ -69,3 +69,4 @@ function createHeart() {
         }
     }, 20);
 }
+
